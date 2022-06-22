@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UCity.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class HealthCheckController : ControllerBase
     {
         [HttpGet]

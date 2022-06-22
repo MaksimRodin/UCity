@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using UCity.Data.Repositories;
+using UCity.Tools;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+DI.Init(builder);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
