@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using UCity.Data.Repositories;
 using UCity.Tools;
+using WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
 DI.Init(builder);
 
@@ -24,6 +24,8 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseAuthorization();
 

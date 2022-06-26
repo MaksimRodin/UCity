@@ -28,11 +28,16 @@ namespace UCity.Logic
 
         public async Task DeleteEvent(int id)
         {
-            try{
+            try
+            {
                 await _eventsRepository.DeleteEvent(id);
-            }catch(KeyNotFoundException){
+            }
+            catch (KeyNotFoundException)
+            {
                 throw;
-            }catch(Exception ex){
+            }
+            catch (Exception ex)
+            {
                 throw new InvalidOperationException($"Event with provided id '{id}' couldn't be delete for the reason '{ex.Message}'");
             }
         }
@@ -40,7 +45,7 @@ namespace UCity.Logic
         public async Task<EventReadDto> GetEvent(int id)
         {
             var ev = await _eventsRepository.GetEvent(id);
-            if(ev == null)
+            if (ev == null)
             {
                 throw new KeyNotFoundException($"Event with provided id '{id}' not found");
             }
@@ -50,7 +55,7 @@ namespace UCity.Logic
 
         public async Task<IEnumerable<EventReadDto>> GetEvents()
         {
-             var events = await _eventsRepository.GetEvents();
+            var events = await _eventsRepository.GetEvents();
             return _mapper.Map<IEnumerable<EventReadDto>>(events);
         }
     }

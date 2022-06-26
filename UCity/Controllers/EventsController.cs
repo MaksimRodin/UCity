@@ -35,14 +35,7 @@ namespace UCity.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<EventReadDto>> GetEvent(int id)
         {
-            try
-            {
-                return Ok(await _eventsLogic.GetEvent(id));
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound("Desired event not found");
-            }
+            return Ok(await _eventsLogic.GetEvent(id));
         }
 
         [HttpGet]

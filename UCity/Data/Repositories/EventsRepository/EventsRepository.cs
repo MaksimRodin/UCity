@@ -38,7 +38,7 @@ namespace UCity.Data.Repositories.EventsRepository
         public async Task DeleteEvent(int id)
         {
             var ev = await _context.Events.FindAsync(id);
-            if(ev == null)
+            if (ev == null)
             {
                 throw new KeyNotFoundException($"Event with provided id '{id}' not found");
             }

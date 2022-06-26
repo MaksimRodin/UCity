@@ -1,0 +1,10 @@
+services:
+  ucity-services:
+    build:
+      context: ./UCity/
+      dockerfile: Dockerfile
+    image: ucity
+    container_name: ucity
+    
+    ports:
+      - "8080:80"
