@@ -1,6 +1,6 @@
-namespace UCity.Data.Dtos
+namespace UCity.Data.Dtos.Event
 {
-    public class EventPartReadDto
+    public class EventPartUpdateDto
     {
         public int Id { get; set; }
         public string? Name { get; set; }

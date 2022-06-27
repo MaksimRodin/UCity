@@ -1,7 +1,8 @@
-namespace UCity.Data.Dtos
+namespace UCity.Data.Dtos.Event
 {
-    public class EventPartCreateDto
+    public class EventPartReadDto
     {
+        public int Id { get; set; }
         public string? Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }

@@ -1,8 +1,6 @@
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using UCity.Data.Dtos;
-using UCity.Data.Models;
-using UCity.Data.Repositories.EventsRepository;
+using UCity.Data.Dtos.Event;
+using UCity.Data.Models.Auth;
 using UCity.Logic;
 
 namespace UCity.Controllers
@@ -19,6 +17,7 @@ namespace UCity.Controllers
         }
 
         [HttpPost]
+        [Authorize(Role.Admin, Role.Moderator)]
         public async Task<ActionResult> CreateEvent(EventCreateDto ev)
         {
             await _eventsLogic.CreateEvent(ev);
@@ -26,6 +25,7 @@ namespace UCity.Controllers
         }
 
         [HttpPut]
+        [Authorize(Role.Admin, Role.Moderator)]
         public async Task<ActionResult> UpdateEvent(EventUpdateDto ev)
         {
             await _eventsLogic.UpdateEvent(ev);
@@ -45,6 +45,7 @@ namespace UCity.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Role.Admin, Role.Moderator)]
         public async Task<ActionResult> DeleteEvent(int id)
         {
             await _eventsLogic.DeleteEvent(id);

@@ -1,6 +1,4 @@
-using UCity.Data.Models;
-
-namespace UCity.Data.Dtos
+namespace UCity.Data.Dtos.Event
 {
     public class EventCreateDto
     {

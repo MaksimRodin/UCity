@@ -1,7 +1,8 @@
+using UCity.Data.Repositories.AccountsRepository;
 using UCity.Data.Repositories.EventsRepository;
 using UCity.Logic;
 
-namespace UCity.Tools
+namespace UCity.Common.Tools
 {
     public static class DI
     {
@@ -15,10 +16,12 @@ namespace UCity.Tools
 
         private static void InitLogicDIs(WebApplicationBuilder builder){
             builder.Services.AddScoped<IEventsLogic, EventsLogic>();
+            builder.Services.AddScoped<IAccountsLogic, AccountsLogic>();
         }
 
         private static void InitDataDIs(WebApplicationBuilder builder){
             builder.Services.AddScoped<IEventsRepository, EventsRepository>();
+            builder.Services.AddScoped<IAccountsRepository, AccountsRepository>();
         }
     }
 }

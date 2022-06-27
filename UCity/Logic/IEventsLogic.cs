@@ -1,4 +1,4 @@
-using UCity.Data.Dtos;
+using UCity.Data.Dtos.Event;
 
 namespace UCity.Logic
 {

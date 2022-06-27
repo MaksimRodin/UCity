@@ -1,5 +1,5 @@
 using AutoMapper;
-using UCity.Data.Dtos;
+using UCity.Data.Dtos.Event;
 using UCity.Data.Models;
 
 namespace UCity.Data.MappingProfiles
